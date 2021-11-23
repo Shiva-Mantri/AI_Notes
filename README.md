@@ -1,13 +1,25 @@
 ## Basic Model Set up and Training (ML template)
 
-### Set Up Data
+### Load Data
 * Load Data ` data = pd.read_csv(file_location)`
-* Inspect Columns, identify relevant features (X), and target (y) `data.columns, data.head(), data.describe()`
-* Clean Data, e.g. remove nulls, etc  `data.dropna(axis=0)`
+
+### Identify Relevant Features (Columns)
+* Inspect Columns
+* Identify relevant features (X), and target (y) `data.columns, data.head(), data.describe()`  
 * Identify features `features = ['col1', 'col2']`
 * Get data for relevant features `X = data[features]`
 * Get data for target `y = data.targetColumn`
+
+### Split Data
 * Split data into training and test sets `train_X, val_X, train_y, val_y = sklearn.model_selection.train_test_split(X, y, random_state=0)`
+
+### Pre-Process Data
+* Handle Missing Values - Imputation (e.g with mean), Drop missing columns (if column not relevant),
+* Handle Categorical Values
+  * Identify Categorical values `obj_cols = X_train.select_dtypes..`
+  * Use Ordinal/One-Hot Encoding
+    * [Ordinal Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=12) `sklearn.preprocessing.OrdinalEncoder.fit_transform(X_train[obj_cols])`
+    * [One-Hot Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=14) `sklearn.preprocessing.OneHotEncoder.fit_transform(X_train[obj_cols])` 
 
 ### Model Train/Fit
 * Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams)`
