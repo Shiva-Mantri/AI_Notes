@@ -2,6 +2,7 @@
 
 ### Load Data
 * Load Data ` data = pd.read_csv(file_location)`
+  * Tip: [Basic difference between Pandas, Numpy, Sklearn](https://www.quora.com/What-is-the-relationship-among-NumPy-SciPy-Pandas-and-Scikit-learn-and-when-should-I-use-each-one-of-them)
 
 ### Identify Relevant Features (Columns)
 * Inspect Columns
@@ -14,7 +15,9 @@
 * Split data into training and test sets `train_X, val_X, train_y, val_y = sklearn.model_selection.train_test_split(X, y, random_state=0)`
 
 ### Pre-Process Data
-* Handle Missing Values - Imputation (e.g with mean), Drop missing columns (if column not relevant),
+* Handle Missing Values `cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()] # Get names of columns with missing values`
+  * [Imputation (e.g with mean using SimpleImputer)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=8), 
+  * [Drop missing columns (if column not relevant)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=6)
 * Handle Categorical Values
   * Identify Categorical values `obj_cols = X_train.select_dtypes..`
   * Use Ordinal/One-Hot Encoding
