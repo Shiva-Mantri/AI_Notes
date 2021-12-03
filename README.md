@@ -19,10 +19,10 @@
   * [Imputation (e.g with mean using SimpleImputer)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=8), 
   * [Drop missing columns (if column not relevant)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=6)
 * Handle Categorical Values
-  * Identify Categorical values `obj_cols = X_train.select_dtypes..`
-  * Use Ordinal/One-Hot Encoding
-    * [Ordinal Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=12) `sklearn.preprocessing.OrdinalEncoder.fit_transform(X_train[obj_cols])`
-    * [One-Hot Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=14) `sklearn.preprocessing.OneHotEncoder.fit_transform(X_train[obj_cols])` 
+  * Identify Categorical values `object_cols = [col for col in X_train.columns if X_train[col].dtype == "object"]`
+  * [Ordinal Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=12) `sklearn.preprocessing.OrdinalEncoder.fit_transform(X_train[obj_cols])`
+    * May need to handle data that appears in validation, but not training.
+  * [One-Hot Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=14) `sklearn.preprocessing.OneHotEncoder.fit_transform(X_train[obj_cols])` 
 
 ### Model Train/Fit
 * Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams)`
