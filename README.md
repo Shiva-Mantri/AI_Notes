@@ -41,7 +41,16 @@
 ### Final Model
 * Retrain model with full data (including validation set) and optimal parameters
 
+## Advanced Model Set up and Training (ML template)
+
+### Use Pipelines
+* Group Pre-processing steps, and other steps into individual groups. See https://www.kaggle.com/alexisbcook/pipelines
+* e.g. Use sklearn Pipeline
+
+### Other topics
+* Cross Validation - https://machinelearningmastery.com/k-fold-cross-validation/
+
 ---
-###### Sources 
+###### Sources/Credit: 
 - https://www.kaggle.com/thirty-days-of-ml-assignments (best to start and complete)
 - https://machinelearningmastery.com/blog/
