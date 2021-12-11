@@ -25,7 +25,7 @@
   * [One-Hot Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=14) `sklearn.preprocessing.OneHotEncoder.fit_transform(X_train[obj_cols])` 
 
 ### Model Train/Fit
-* Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams)`
+* Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams) or XGBRegressor()`
 * Fit with X (training data) and y (target) `model.fit(train_X, train_y)`
 * Advanced - Pick appropriate model after evaluating error (next step) - e.g. some models - RandomForest, XGBoost etc.
 
@@ -45,7 +45,7 @@
 
 ### Use Pipelines
 * Group Pre-processing steps, and other steps into individual groups. See https://www.kaggle.com/alexisbcook/pipelines
-* e.g. Use sklearn Pipeline
+* e.g. Sklearn Pipeline
 
 ### Other topics
 * Cross Validation - https://machinelearningmastery.com/k-fold-cross-validation/
