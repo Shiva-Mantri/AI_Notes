@@ -47,8 +47,11 @@
 ### Final Model
 * Retrain model with full data (including validation set) and optimal parameters
 
-## Advanced Model Set up and Training (ML template)
 
+## Sample Projects
+* Predicting Solar Power Output using ML - https://towardsdatascience.com/predicting-solar-power-output-using-machine-learning-techniques-56e7959acb1f
+
+## Advanced Model Set up and Training (ML template)
 ### Use Pipelines
 * Group Pre-processing steps, and other steps into individual groups. See https://www.kaggle.com/alexisbcook/pipelines
 * e.g. Sklearn Pipeline
