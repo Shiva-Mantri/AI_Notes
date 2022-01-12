@@ -27,7 +27,7 @@
   * Hours of the day, days of the week, months in a year, and wind direction are all examples of features that are cyclical. 
   * Source, read: http://blog.davidkaleko.com/feature-engineering-cyclical-features.html, https://medium.com/ai%C2%B3-theory-practice-business/top-6-errors-novice-machine-learning-engineers-make-e82273d394db
   * Example: Cyclic for limited range e.g. peak daylight hours - 10AM - 3PM - [Predicting Solar Power Output using ML](https://towardsdatascience.com/predicting-solar-power-output-using-machine-learning-techniques-56e7959acb1f#:~:text=Secondly%2C%20let%E2%80%99s%20create%20cyclic%20features%20using%20month%20and%20hour%20data.%20It%20should%20be%20noted%20that%20only%20data%20between%2010%20am%20and%203%20pm%20is%20available%20which%20cuts%20out%20the%20period%20when%20the%20systems%20are%20not%20expected%20to%20generate%20power.)
-  * Keep in mind that when the values are limited variations like top of the hour (24 categories), months (12), they are like categorical. You can approach with One-Hot encoding. Howver, when values are continuous, you may want to stick with cyclic approach.
+  * Keep in mind that when the values are limited variations like top of the hour (24 categories), months (12), they are like categorical. You can approach with One-Hot encoding. Howver, when values are continuous, you may want to stick with cyclic approach (Source: [See comments in article](http://disq.us/p/24i2yk9))
 
 ### Model Train/Fit
 * Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams) or XGBRegressor()`
