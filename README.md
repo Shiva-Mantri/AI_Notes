@@ -49,6 +49,8 @@
 
 
 ## Sample Projects
+(Sources as well)
+* https://www.kaggle.com/thirty-days-of-ml-assignments
 * Predicting Solar Power Output using ML - https://towardsdatascience.com/predicting-solar-power-output-using-machine-learning-techniques-56e7959acb1f
 
 ## Advanced Model Set up and Training (ML template)
@@ -58,8 +60,3 @@
 
 ### Other topics
 * Cross Validation - https://machinelearningmastery.com/k-fold-cross-validation/
-
----
-###### Sources/Credit: 
-- https://www.kaggle.com/thirty-days-of-ml-assignments (best to start and complete)
-- https://machinelearningmastery.com/blog/
