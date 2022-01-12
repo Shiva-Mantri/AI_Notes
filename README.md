@@ -23,6 +23,8 @@
   * [Ordinal Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=12) `sklearn.preprocessing.OrdinalEncoder.fit_transform(X_train[obj_cols])`
     * May need to handle data that appears in validation, but not training.
   * [One-Hot Encoding](https://www.kaggle.com/alexisbcook/categorical-variables?scriptVersionId=79127496&cellId=14) `sklearn.preprocessing.OneHotEncoder.fit_transform(X_train[obj_cols])` 
+ * Handle Cyclic Features - Hours of the day, days of the week, months in a year, and wind direction are all examples of features that are cyclical. Source, read:
+  http://blog.davidkaleko.com/feature-engineering-cyclical-features.html, https://twitter.com/BecomingDataSci/status/924814225637367808
 
 ### Model Train/Fit
 * Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams) or XGBRegressor()`
