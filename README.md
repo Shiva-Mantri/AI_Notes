@@ -1,8 +1,20 @@
 ## Basic Model Set up and Training (ML template)
 
 ### Load Data
-* Load Data ` data = pd.read_csv(file_location)`
+* Load Data ` df = pd.read_csv(file_location)`
   * Tip: [Basic difference between Pandas, Numpy, Sklearn](https://www.quora.com/What-is-the-relationship-among-NumPy-SciPy-Pandas-and-Scikit-learn-and-when-should-I-use-each-one-of-them)
+
+### EDA - Exploratory Data Analysis
+
+#### Clean Data
+* Take a look at couple of rows and available columns - `df.head()`, `df.columns`
+* Column headers - Change to lower case - `df.columns.str.lower()`
+* Row values - Change to lower case
+  * Get list of column names with Object types (Strings) - `list[df.dtypes[df.dtypes == 'object']].index]`
+  * Loop over columns and convert to lower case, replace space with _ -  `df[col] = df[col].str.lower().str.replace(' ', '_')`
+  
+#### Look at Data
+
 
 ### Identify Relevant Features (Columns)
 * Repeat this step after pre-processing and at any other required stage
