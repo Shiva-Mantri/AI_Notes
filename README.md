@@ -1,22 +1,37 @@
-## Basic Model Set up and Training (ML template)
+# Basic Model Set up and Training (ML template)
 
-### Load Data
+## Load Data
 * Load Data ` df = pd.read_csv(file_location)`
   * Tip: [Basic difference between Pandas, Numpy, Sklearn](https://www.quora.com/What-is-the-relationship-among-NumPy-SciPy-Pandas-and-Scikit-learn-and-when-should-I-use-each-one-of-them)
 
-### EDA - Exploratory Data Analysis
+## EDA - Exploratory Data Analysis
 
-#### Clean Data
+### Clean Data
 * Take a look at couple of rows and available columns - `df.head()`, `df.columns`
 * Column headers - Change to lower case - `df.columns.str.lower()`
 * Row values - Change to lower case
   * Get list of column names with Object types (Strings) - `list[df.dtypes[df.dtypes == 'object']].index]`
   * Loop over columns and convert to lower case, replace space with _ -  `df[col] = df[col].str.lower().str.replace(' ', '_')`
   
-#### Look at Data
+### Look at Data
+* List of columns `df.columns`
+* For each column, review number of unique values - `df[col].nunique()`, list ~5 unique values - `df[col].unique()[:5]`
 
+### Look at Data Distribution
+* Use matplotlib, seaborn to visualize data
+* Histogram - `sns.histplot(df.col, bins=num)`.
+  * Look for long tail distribution and look at non-tail data - `sns.histplot(df.col[df.col < somevalue], bins=num`)
+  * Apply Logrithm to change actual wide apart values to smaller closer values - `np.log1p(df.col)`
+* If the data now looks like a Normal Distribution (bell curve), models tend to do better.
 
-### Identify Relevant Features (Columns)
+## Pre-Process Data
+
+### Create Train, Validation and Test DataSets
+* Shuffle data and split to `df_train, df_val, df_test`
+* Create target variable - `y_train = np.log1p(df_train.col.values)`, repeat for `y_val`, `y_test`
+* Remove target variable from features - `del df_train[col]`, repeat for `df_val`, `df_test`
+
+## (rephrase) Identify Relevant Features and Target Columns
 * Repeat this step after pre-processing and at any other required stage
 * Inspect Columns. Use correlation matrix, etc 
 * Identify relevant features (X), and target (y) `data.columns, data.head(), data.describe()`  
@@ -24,7 +39,8 @@
 * Get data for relevant features `X = data[features]`
 * Get data for target `y = data.targetColumn`
 
-### Pre-Process Data
+### (rephrase) Pre-Process Data
+* Identify columns with missing values and counts - `df.isnull().sum()`
 * Handle Missing Values `cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()] # Get names of columns with missing values`
   * [Imputation (e.g with mean using SimpleImputer)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=8), 
   * [Drop missing columns (if column not relevant)](https://www.kaggle.com/alexisbcook/missing-values?scriptVersionId=79127568&cellId=6)
