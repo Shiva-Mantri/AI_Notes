@@ -57,6 +57,10 @@
 
 ### Split Data
 * Split data into training and test sets `train_X, val_X, train_y, val_y = sklearn.model_selection.train_test_split(X, y, random_state=0)`
+* #### Stratificed Sampling
+  * Stratified sampling is a method to split a dataset to produce subsets containing a balanced proportion of samples for each category.
+  * Stratified sampling in Machine Learning" is a quick introduction to stratified sampling.
+  * Check "What is Stratified Cross-Validation in Machine Learning?" for more information about stratified cross-validation.
 
 ### Model Train/Fit
 * Pick a relevant model e.g. `model = sklearn.tree.DecisionTreeRegressor(someParams) or XGBRegressor()`
